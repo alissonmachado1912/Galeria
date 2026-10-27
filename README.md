@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Aula 08 — Carousel com Swiper
 
-## Getting Started
+Adaptado da resolução do professor Wellington:
+https://github.com/wellingtoncorreia/galeria-Resolu--o
 
-First, run the development server:
+A página exibe o carrossel de cinco veículos e o carrossel de seis cards de blog,
+como na resolução. Ambos possuem setas, paginação clicável, loop e autoplay
+com intervalo de 3 segundos. Os cards exibem imagem, categoria, descrição,
+data e comentários fornecidos pelo professor.
+
+O visual segue as medidas da resolução: cards de 400 por 400 pixels,
+três slides com espaçamento de 80 pixels e carrossel de veículos com metade
+da largura da página. O código está em `src/app`, com tipagem inferida.
+
+## Executar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra http://localhost:3000. As imagens externas precisam de internet.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verificações
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-## Learn More
+Para produção, execute `npm run build` e depois `npm start`.
 
-To learn more about Next.js, take a look at the following resources:
+## Arquivos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/components/Carousel.tsx`: carrossel de veículos.
+- `src/app/components/Card.tsx`: carrossel de cards do professor.
+- `src/app/components/card.css`: estilos dos cards.
+- `src/app/data/dataCard.ts`: os seis cards da resolução.
+- `src/app/data/dataCarousel.ts`: exporta os dados de `slideData.ts`.
+- `src/app/page.tsx`: apresenta os dois carrosséis.

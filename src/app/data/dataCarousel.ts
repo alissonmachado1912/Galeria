@@ -1,0 +1,1 @@
+export { slideImages } from "./slideData";
